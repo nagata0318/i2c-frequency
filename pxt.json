@@ -2,17 +2,10 @@
   "name": "i2c-frequency",
   "version": "0.0.1",
   "description": "I2C frequency control",
-  "license": "MIT",
-
   "dependencies": {
     "core": "*"
   },
-
   "files": [
     "i2c.ts"
-  ],
-
-  "testFiles": [],
-
-  "target": "microbit"
+  ]
 }
