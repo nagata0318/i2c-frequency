@@ -3,22 +3,16 @@
   "version": "0.0.1",
   "description": "I2C frequency control",
   "license": "MIT",
+
   "dependencies": {
     "core": "*"
   },
+
   "files": [
     "i2c.ts"
   ],
-  "testFiles": [
-    "test.ts"
-  ],
-  "yotta": {
-    "config": {
-      "microbit-dal": {
-        "bluetooth": {
-          "enabled": 0
-        }
-      }
-    }
-  }
+
+  "testFiles": [],
+
+  "target": "microbit"
 }
