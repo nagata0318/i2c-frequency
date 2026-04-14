@@ -6,6 +6,7 @@
     "core": "*"
   },
   "files": [
-    "i2c.ts"
+    "i2c.ts",
+    "i2c.cpp"
   ]
 }
