@@ -8,5 +8,6 @@
   "files": [
     "i2c.ts",
     "i2c.cpp"
-  ]
+  ],
+  "target": "microbit"
 }
