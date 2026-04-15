@@ -6,8 +6,10 @@ namespace I2CEx {
      */
     //% block="I2C周波数を %freq に設定"
     export function setFrequency(freq: I2CFreq): void {
-        if (_setFrequency) {
+        try {
             _setFrequency(freq)
+        } catch {
+            // Simulator では何もしない
         }
     }
 
@@ -16,12 +18,14 @@ namespace I2CEx {
      */
     //% block="I2C周波数を %hz Hz に設定"
     export function setFrequencyRaw(hz: number): void {
-        if (_setFrequency) {
+        try {
             _setFrequency(hz)
+        } catch {
+            // Simulator では何もしない
         }
     }
 
-    // shim（SIMでは undefined、実機では C++ にリンク）
+    // shim（JS実装なし、C++に直結）
     //% shim=I2CEx::_setFrequency
     declare function _setFrequency(hz: number): void;
 
@@ -32,4 +36,3 @@ namespace I2CEx {
         F400K = 400000
     }
 }
-``
