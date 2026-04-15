@@ -1,12 +1,15 @@
 {
-  "name": "i2c-frequency",
-  "version": "0.0.1",
-  "description": "I2C frequency control for micro:bit",
-  "files": [
-    "i2c.ts",
-    "i2c.cpp"
-  ],
-  "dependencies": {
-    "core": "*"
-  }
+    "name": "i2c-frequency",
+    "version": "0.0.2",
+    "description": "I2C frequency control for micro:bit",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "i2c.ts",
+        "i2c.cpp"
+    ],
+    "target": "microbit",
+    "supportedTargets": ["microbit"],
+    "native": true
 }
