@@ -1,6 +1,6 @@
 {
     "name": "i2c-frequency",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "I2C frequency control for micro:bit",
     "dependencies": {
         "core": "*"
