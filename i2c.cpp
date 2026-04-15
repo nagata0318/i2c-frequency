@@ -2,13 +2,19 @@
 
 namespace I2CEx {
 
+    // MakeCode内部APIを利用
+    // pins.i2cFrequency() に相当
     void _setFrequency(int hz) {
 
-        if (hz <= 100000) hz = 100000;
-        else if (hz <= 400000) hz = 400000;
-        else hz = 400000;
+        // 安全制限
+        if (hz <= 100000) {
+            hz = 100000;
+        } else {
+            hz = 400000;
+        }
 
-        // CODAL経由（環境依存だが標準ルート）
-        uBit.i2c.setFrequency(hz);
+        // ★ ここが重要 ★
+        // MakeCode公式経路を呼ぶ
+        pxt::i2cFrequency(hz);
     }
 }
