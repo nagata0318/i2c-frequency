@@ -6,6 +6,9 @@ namespace I2CEx {
      */
     //% block="I2C周波数を %freq に設定"
     export function setFrequency(freq: I2CFreq): void {
+        if (control.isSimulator()) {
+            return
+        }
         _setFrequency(freq)
     }
 
@@ -14,6 +17,9 @@ namespace I2CEx {
      */
     //% block="I2C周波数を %hz Hz に設定"
     export function setFrequencyRaw(hz: number): void {
+        if (control.isSimulator()) {
+            return
+        }
         _setFrequency(hz)
     }
 
@@ -21,7 +27,6 @@ namespace I2CEx {
     //% shim=I2CEx::_setFrequency
     declare function _setFrequency(hz: number): void;
 
-    // 周波数選択
     export enum I2CFreq {
         //% block="100kHz"
         F100K = 100000,
