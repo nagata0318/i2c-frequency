@@ -17,11 +17,9 @@ namespace I2CEx {
         _setFrequency(hz)
     }
 
-    // shim
+    // shim（実装禁止）
     //% shim=I2CEx::_setFrequency
-    function _setFrequency(hz: number): void {
-        return
-    }
+    declare function _setFrequency(hz: number): void;
 
     // 周波数選択
     export enum I2CFreq {
