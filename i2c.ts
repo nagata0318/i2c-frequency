@@ -2,7 +2,7 @@
 namespace I2CEx {
 
     /**
-     * I2C周波数を設定（安全版）
+     * I2C周波数を設定
      */
     //% block="I2C周波数を %freq に設定"
     export function setFrequency(freq: I2CFreq): void {
@@ -10,23 +10,15 @@ namespace I2CEx {
     }
 
     /**
-     * 任意周波数設定（Hz）
+     * 任意周波数設定
      */
     //% block="I2C周波数を %hz Hz に設定"
     export function setFrequencyRaw(hz: number): void {
 
-        // ---- 入力正規化 ----
         let f = normalizeFrequency(hz)
 
-        // ---- 最優先：MakeCode標準API ----
-        if ((pins as any).i2cFrequency) {
-            // 安全に呼び出し
-            (pins as any).i2cFrequency(f)
-            return
-        }
-
-        // ---- フォールバック：何もしない ----
-        // （未対応環境）
+        // ★ 直接呼び出し（これが唯一安定）
+        pins.i2cFrequency(f)
     }
 
     /**
@@ -35,7 +27,6 @@ namespace I2CEx {
     function normalizeFrequency(hz: number): number {
 
         if (hz <= 100000) return 100000
-
         if (hz <= 250000) return 250000
 
         return 400000
